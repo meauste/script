@@ -807,21 +807,21 @@ public class textti : MonoBehaviour
         System.Array.Resize(ref chartx, six + 2);
         chart[chart.Length - 1] = textho.Length;
         charts[six] = 1;
-        D1bgchantei = System.Array.ConvertAll(D1bgchantei, delegate (int i) { return i + textho.Length - 1; });
-        D1bgcdhantei = System.Array.ConvertAll(D1bgcdhantei, delegate (int i) { return i + textho.Length - 1; });
-        D1chaphantei = System.Array.ConvertAll(D1chaphantei, delegate (int i) { return i + textho.Length - 1; });
-        D1chapthantei = System.Array.ConvertAll(D1chapthantei, delegate (int i) { return i + textho.Length - 1; });
-        D1kakudaihantei = System.Array.ConvertAll(D1kakudaihantei, delegate (int i) { return i + textho.Length - 1; });
-        D1bgswhantei = System.Array.ConvertAll(D1bgswhantei, delegate (int i) { return i + textho.Length - 1; });
-        D1bglwhantei = System.Array.ConvertAll(D1bglwhantei, delegate (int i) { return i + textho.Length - 1; });
-        D1bgehantei = System.Array.ConvertAll(D1bgehantei, delegate (int i) { return i + textho.Length - 1; });
-        D1serioushantei = System.Array.ConvertAll(D1serioushantei, delegate (int i) { return i + textho.Length - 1; });
-        D1hazimarihantei = System.Array.ConvertAll(D1hazimarihantei, delegate (int i) { return i + textho.Length - 1; });
-        D1chrchantei = System.Array.ConvertAll(D1chrchantei, delegate (int i) { return i + textho.Length - 1; });
-        D1chrcdhantei = System.Array.ConvertAll(D1chrcdhantei, delegate (int i) { return i + textho.Length - 1; });
-        D1unazhantei = System.Array.ConvertAll(D1unazhantei, delegate (int i) { return i + textho.Length - 1; });
-        D1odorokihantei = System.Array.ConvertAll(D1odorokihantei, delegate (int i) { return i + textho.Length - 1; });
-        D1daruhantei = System.Array.ConvertAll(D1daruhantei, delegate (int i) { return i + textho.Length - 1; });
+        D1bgchantei = System.Array.ConvertAll(D1bgchantei, delegate (int i) { return i + textho.Length ; });
+        D1bgcdhantei = System.Array.ConvertAll(D1bgcdhantei, delegate (int i) { return i + textho.Length ; });
+        D1chaphantei = System.Array.ConvertAll(D1chaphantei, delegate (int i) { return i + textho.Length ; });
+        D1chapthantei = System.Array.ConvertAll(D1chapthantei, delegate (int i) { return i + textho.Length ; });
+        D1kakudaihantei = System.Array.ConvertAll(D1kakudaihantei, delegate (int i) { return i + textho.Length ; });
+        D1bgswhantei = System.Array.ConvertAll(D1bgswhantei, delegate (int i) { return i + textho.Length ; });
+        D1bglwhantei = System.Array.ConvertAll(D1bglwhantei, delegate (int i) { return i + textho.Length ; });
+        D1bgehantei = System.Array.ConvertAll(D1bgehantei, delegate (int i) { return i + textho.Length ; });
+        D1serioushantei = System.Array.ConvertAll(D1serioushantei, delegate (int i) { return i + textho.Length ; });
+        D1hazimarihantei = System.Array.ConvertAll(D1hazimarihantei, delegate (int i) { return i + textho.Length ; });
+        D1chrchantei = System.Array.ConvertAll(D1chrchantei, delegate (int i) { return i + textho.Length ; });
+        D1chrcdhantei = System.Array.ConvertAll(D1chrcdhantei, delegate (int i) { return i + textho.Length ; });
+        D1unazhantei = System.Array.ConvertAll(D1unazhantei, delegate (int i) { return i + textho.Length ; });
+        D1odorokihantei = System.Array.ConvertAll(D1odorokihantei, delegate (int i) { return i + textho.Length ; });
+        D1daruhantei = System.Array.ConvertAll(D1daruhantei, delegate (int i) { return i + textho.Length ; });
         if (Bgcontroller.sentakux == 0) { Bgcontroller.sentakux += 1; chartx[chartx.Length - 1] = 1; } else { if (sentakutypes[Bgcontroller.sentakux] != 0) {Bgcontroller.sentakux += sentakutypes[Bgcontroller.sentakux] + 1; chartx[chartx.Length - 1] = sentakutypes[Bgcontroller.sentakux] + 1; } }
         chrmyo = chrmyo.Concat(D1chrmyo).ToArray();
         chrna = chrna.Concat(D1chrna).ToArray();
@@ -909,7 +909,7 @@ public class textti : MonoBehaviour
         D1chapnuml.RemoveAll(item => item == "" | item == null);
         chapnum = D1chapnuml.ToArray();
         List<int> D1chaptypesl = new List<int>(chaptypes);
-        D1chaptypesl.RemoveAll(item => item >=99999);
+        D1chaptypesl.RemoveAll(item => item ==3);
         chaptypes = D1chaptypesl.ToArray();
         //アイキャッチ
         List<int> D1chapthanteil = new List<int>(chapthantei);
@@ -926,7 +926,7 @@ public class textti : MonoBehaviour
         D1kakudaiansl.RemoveAll(item => item >=99999);
         kakudaians = D1kakudaiansl.ToArray();
         List<int> D1kakudaitypesl = new List<int>(kakudaitypes);
-        D1kakudaitypesl.RemoveAll(item => item >=99999);
+        D1kakudaitypesl.RemoveAll(item => item ==5);
         kakudaitypes = D1kakudaitypesl.ToArray();
         List<int> D1kakudaihanteil = new List<int>(kakudaihantei);
         D1kakudaihanteil.RemoveAll(item => item >=99999);
@@ -968,7 +968,7 @@ public class textti : MonoBehaviour
         D1chrcnuml.RemoveAll(item => item == "" | item == null);
         chrcnum = D1chrcnuml.ToArray();
         List<int> D1ceventsyll = new List<int>(ceventsyl);
-        D1ceventsyll.RemoveAll(item => item >=99999);
+        D1ceventsyll.RemoveAll(item => item ==2);
         ceventsyl = D1ceventsyll.ToArray();
         //キャラ表示(2)
         List<int> D1chrcdhanteil = new List<int>(chrcdhantei);
@@ -1082,21 +1082,21 @@ public class textti : MonoBehaviour
         System.Array.Resize(ref chartx, six+2);
         chart[chart.Length - 1] = textho.Length;
         charts[six] = 2;
-        D2bgchantei = System.Array.ConvertAll(D2bgchantei, delegate (int i) { return i + textho.Length - 1; });
-        D2bgcdhantei = System.Array.ConvertAll(D2bgcdhantei, delegate (int i) { return i + textho.Length - 1; });
-        D2chaphantei = System.Array.ConvertAll(D2chaphantei, delegate (int i) { return i + textho.Length - 1; });
-        D2chapthantei = System.Array.ConvertAll(D2chapthantei, delegate (int i) { return i + textho.Length - 1; });
-        D2kakudaihantei = System.Array.ConvertAll(D2kakudaihantei, delegate (int i) { return i + textho.Length - 1; });
-        D2bgswhantei = System.Array.ConvertAll(D2bgswhantei, delegate (int i) { return i + textho.Length - 1; });
-        D2bglwhantei = System.Array.ConvertAll(D2bglwhantei, delegate (int i) { return i + textho.Length - 1; });
-        D2bgehantei = System.Array.ConvertAll(D2bgehantei, delegate (int i) { return i + textho.Length - 1; });
-        D2serioushantei = System.Array.ConvertAll(D2serioushantei, delegate (int i) { return i + textho.Length - 1; });
-        D2hazimarihantei = System.Array.ConvertAll(D2hazimarihantei, delegate (int i) { return i + textho.Length - 1; });
-        D2chrchantei = System.Array.ConvertAll(D2chrchantei, delegate (int i) { return i + textho.Length - 1; });
-        D2chrcdhantei = System.Array.ConvertAll(D2chrcdhantei, delegate (int i) { return i + textho.Length - 1; });
-        D2unazhantei = System.Array.ConvertAll(D2unazhantei, delegate (int i) { return i + textho.Length - 1; });
-        D2odorokihantei = System.Array.ConvertAll(D2odorokihantei, delegate (int i) { return i + textho.Length - 1; });
-        D2daruhantei = System.Array.ConvertAll(D2daruhantei, delegate (int i) { return i + textho.Length - 1; });
+        D2bgchantei = System.Array.ConvertAll(D2bgchantei, delegate (int i) { return i + textho.Length ; });
+        D2bgcdhantei = System.Array.ConvertAll(D2bgcdhantei, delegate (int i) { return i + textho.Length ; });
+        D2chaphantei = System.Array.ConvertAll(D2chaphantei, delegate (int i) { return i + textho.Length ; });
+        D2chapthantei = System.Array.ConvertAll(D2chapthantei, delegate (int i) { return i + textho.Length ; });
+        D2kakudaihantei = System.Array.ConvertAll(D2kakudaihantei, delegate (int i) { return i + textho.Length ; });
+        D2bgswhantei = System.Array.ConvertAll(D2bgswhantei, delegate (int i) { return i + textho.Length ; });
+        D2bglwhantei = System.Array.ConvertAll(D2bglwhantei, delegate (int i) { return i + textho.Length ; });
+        D2bgehantei = System.Array.ConvertAll(D2bgehantei, delegate (int i) { return i + textho.Length ; });
+        D2serioushantei = System.Array.ConvertAll(D2serioushantei, delegate (int i) { return i + textho.Length ; });
+        D2hazimarihantei = System.Array.ConvertAll(D2hazimarihantei, delegate (int i) { return i + textho.Length ; });
+        D2chrchantei = System.Array.ConvertAll(D2chrchantei, delegate (int i) { return i + textho.Length ; });
+        D2chrcdhantei = System.Array.ConvertAll(D2chrcdhantei, delegate (int i) { return i + textho.Length ; });
+        D2unazhantei = System.Array.ConvertAll(D2unazhantei, delegate (int i) { return i + textho.Length ; });
+        D2odorokihantei = System.Array.ConvertAll(D2odorokihantei, delegate (int i) { return i + textho.Length ; });
+        D2daruhantei = System.Array.ConvertAll(D2daruhantei, delegate (int i) { return i + textho.Length ; });
         if (Bgcontroller.sentakux == 0) { Bgcontroller.sentakux += 2; chartx[chartx.Length - 1] = 2; } else { if (sentakutypes[Bgcontroller.sentakux] != 0) { Bgcontroller.sentakux += sentakutypes[Bgcontroller.sentakux-1]+ 2; chartx[chartx.Length - 1] = sentakutypes[Bgcontroller.sentakux]+ 2; } }
         chrmyo = chrmyo.Concat(D2chrmyo).ToArray();
         chrna = chrna.Concat(D2chrna).ToArray();
@@ -1184,7 +1184,7 @@ public class textti : MonoBehaviour
         D2chapnuml.RemoveAll(item => item == "" | item == null);
         chapnum = D2chapnuml.ToArray();
         List<int> D2chaptypesl = new List<int>(chaptypes);
-        D2chaptypesl.RemoveAll(item => item >=99999);
+        D2chaptypesl.RemoveAll(item => item ==3);
         chaptypes = D2chaptypesl.ToArray();
         //アイキャッチ
         List<int> D2chapthanteil = new List<int>(chapthantei);
@@ -1201,7 +1201,7 @@ public class textti : MonoBehaviour
         D2kakudaiansl.RemoveAll(item => item >=99999);
         kakudaians = D2kakudaiansl.ToArray();
         List<int> D2kakudaitypesl = new List<int>(kakudaitypes);
-        D2kakudaitypesl.RemoveAll(item => item >=99999);
+        D2kakudaitypesl.RemoveAll(item => item ==5);
         kakudaitypes = D2kakudaitypesl.ToArray();
         List<int> D2kakudaihanteil = new List<int>(kakudaihantei);
         D2kakudaihanteil.RemoveAll(item => item >=99999);
@@ -1243,7 +1243,7 @@ public class textti : MonoBehaviour
         D2chrcnuml.RemoveAll(item => item == "" | item == null);
         chrcnum = D2chrcnuml.ToArray();
         List<int> D2ceventsyll = new List<int>(ceventsyl);
-        D2ceventsyll.RemoveAll(item => item >=99999);
+        D2ceventsyll.RemoveAll(item => item ==2);
         ceventsyl = D2ceventsyll.ToArray();
         //キャラ表示(2)
         List<int> D2chrcdhanteil = new List<int>(chrcdhantei);

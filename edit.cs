@@ -965,6 +965,17 @@ public class edit : MonoBehaviour
             {
                 script.chaphantei[ch] = 99999;
             }
+            if (script.chaphantei[ch] == 99999)
+            {
+                script.chaptypes[ch] = 3;
+            }
+            else
+            {
+                if(script.chaptypes[ch] ==3)
+                {
+                    script.chaptypes[ch] = 0;
+                }
+            }
         }
         for (ct = 0; ct < textt.chapts; ct++)
         {
@@ -978,6 +989,17 @@ public class edit : MonoBehaviour
             if (script.kakudaihantei[k] == 0)
             {
                 script.kakudaihantei[k] = 99999;
+            }
+            if (script.kakudaihantei[k] == 99999)
+            {
+                script.kakudaitypes[k] = 5;
+            }
+            else
+            {
+                if (script.kakudaitypes[k] == 5)
+                {
+                    script.kakudaitypes[k] = 0;
+                }
             }
         }
         for (int sw = 0; sw < textt.bgsws; sw++)
@@ -1110,16 +1132,16 @@ public class edit : MonoBehaviour
                 {
                     co.SetActive(false);
                     tco.SetActive(true);
-                    tcolora1.text = script.color[edit_tnum - 1];
-                    tcolora2.text = script.color[edit_tnum - 2];
-                    tcolora3.text = script.color[edit_tnum - 3];
-                    tcolora4.text = script.color[edit_tnum - 4];
-                    tcolora5.text = script.color[edit_tnum - 5];
-                    tocolora1.text = script.ocolor[edit_tnum - 1];
-                    tocolora2.text = script.ocolor[edit_tnum - 2];
-                    tocolora3.text = script.ocolor[edit_tnum - 3];
-                    tocolora4.text = script.ocolor[edit_tnum - 4];
-                    tocolora5.text = script.ocolor[edit_tnum - 5];
+                    tcolora1.text = script.ocolor[edit_tnum - 1];
+                    tcolora2.text = script.ocolor[edit_tnum - 2];
+                    tcolora3.text = script.ocolor[edit_tnum - 3];
+                    tcolora4.text = script.ocolor[edit_tnum - 4];
+                    tcolora5.text = script.ocolor[edit_tnum - 5];
+                    tocolora1.text = script.color[edit_tnum - 1];
+                    tocolora2.text = script.color[edit_tnum - 2];
+                    tocolora3.text = script.color[edit_tnum - 3];
+                    tocolora4.text = script.color[edit_tnum - 4];
+                    tocolora5.text = script.color[edit_tnum - 5];
                 }
                 if (textco.chflag == 1)
                 {
@@ -2872,30 +2894,30 @@ public class edit : MonoBehaviour
                 vsept.text = "映像ファイル：" + (vsepage + 1) + "/" + vsempage;
                 if (vsepage == 0) { vsehidari.SetActive(false); } else { vsehidari.SetActive(true); }
                 if (vsepage + 1 == vsempage) { vsemigi.SetActive(false); } else { vsemigi.SetActive(true); }
-                if (videonum > 11 + vsepage * 12) { vsentaku12.text = videoname[11 + vsepage * 12].Substring(videoname[11 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsentaku12.text = "NONE"; }
-                if (videonum > 10 + vsepage * 12) { vsentaku11.text = videoname[10 + vsepage * 12].Substring(videoname[10 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsentaku11.text = "NONE"; }
-                if (videonum > 9 + vsepage * 12) { vsentaku10.text = videoname[9 + vsepage * 12].Substring(videoname[9 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsentaku10.text = "NONE"; }
-                if (videonum > 8 + vsepage * 12) { vsentaku9.text = videoname[8 + vsepage * 12].Substring(videoname[8 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsentaku9.text = "NONE"; }
-                if (videonum > 7 + vsepage * 12) { vsentaku8.text = videoname[7 + vsepage * 12].Substring(videoname[7 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsentaku8.text = "NONE"; }
-                if (videonum > 6 + vsepage * 12) { vsentaku7.text = videoname[6 + vsepage * 12].Substring(videoname[6 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsentaku7.text = "NONE"; }
-                if (videonum > 5 + vsepage * 12) { vsentaku6.text = videoname[5 + vsepage * 12].Substring(videoname[5 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsentaku6.text = "NONE"; }
-                if (videonum > 4 + vsepage * 12) { vsentaku5.text = videoname[4 + vsepage * 12].Substring(videoname[4 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsentaku5.text = "NONE"; }
-                if (videonum > 3 + vsepage * 12) { vsentaku4.text = videoname[3 + vsepage * 12].Substring(videoname[3 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsentaku4.text = "NONE"; }
-                if (videonum > 2 + vsepage * 12) { vsentaku3.text = videoname[2 + vsepage * 12].Substring(videoname[2 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsentaku3.text = "NONE"; }
-                if (videonum > 1 + vsepage * 12) { vsentaku2.text = videoname[1 + vsepage * 12].Substring(videoname[1 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsentaku2.text = "NONE"; }
-                if (videonum > 0 + vsepage * 12) { vsentaku1.text = videoname[0 + vsepage * 12].Substring(videoname[0 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsentaku1.text = "NONE"; }
-                if (videonum > 11 + vsepage * 12) { vsedntaku12.text = videoname[11 + vsepage * 12].Substring(videoname[11 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsedntaku12.text = "NONE"; }
-                if (videonum > 10 + vsepage * 12) { vsedntaku11.text = videoname[10 + vsepage * 12].Substring(videoname[10 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsedntaku11.text = "NONE"; }
-                if (videonum > 9 + vsepage * 12) { vsedntaku10.text = videoname[9 + vsepage * 12].Substring(videoname[9 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsedntaku10.text = "NONE"; }
-                if (videonum > 8 + vsepage * 12) { vsedntaku9.text = videoname[8 + vsepage * 12].Substring(videoname[8 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsedntaku9.text = "NONE"; }
-                if (videonum > 7 + vsepage * 12) { vsedntaku8.text = videoname[7 + vsepage * 12].Substring(videoname[7 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsedntaku8.text = "NONE"; }
-                if (videonum > 6 + vsepage * 12) { vsedntaku7.text = videoname[6 + vsepage * 12].Substring(videoname[6 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsedntaku7.text = "NONE"; }
-                if (videonum > 5 + vsepage * 12) { vsedntaku6.text = videoname[5 + vsepage * 12].Substring(videoname[5 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsedntaku6.text = "NONE"; }
-                if (videonum > 4 + vsepage * 12) { vsedntaku5.text = videoname[4 + vsepage * 12].Substring(videoname[4 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsedntaku5.text = "NONE"; }
-                if (videonum > 3 + vsepage * 12) { vsedntaku4.text = videoname[3 + vsepage * 12].Substring(videoname[3 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsedntaku4.text = "NONE"; }
-                if (videonum > 2 + vsepage * 12) { vsedntaku3.text = videoname[2 + vsepage * 12].Substring(videoname[2 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsedntaku3.text = "NONE"; }
-                if (videonum > 1 + vsepage * 12) { vsedntaku2.text = videoname[1 + vsepage * 12].Substring(videoname[1 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsedntaku2.text = "NONE"; }
-                if (videonum > 0 + vsepage * 12) { vsedntaku1.text = videoname[0 + vsepage * 12].Substring(videoname[0 + vsepage * 12].LastIndexOf("/") + 1).Replace(".mp4", string.Empty); } else { vsedntaku1.text = "NONE"; }
+                if (videonum > 11 + vsepage * 12) { vsentaku12.text = videoname[11 + vsepage * 12].Substring(videoname[11 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsentaku12.text = "NONE"; }
+                if (videonum > 10 + vsepage * 12) { vsentaku11.text = videoname[10 + vsepage * 12].Substring(videoname[10 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsentaku11.text = "NONE"; }
+                if (videonum > 9 + vsepage * 12) { vsentaku10.text = videoname[9 + vsepage * 12].Substring(videoname[9 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsentaku10.text = "NONE"; }
+                if (videonum > 8 + vsepage * 12) { vsentaku9.text = videoname[8 + vsepage * 12].Substring(videoname[8 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsentaku9.text = "NONE"; }
+                if (videonum > 7 + vsepage * 12) { vsentaku8.text = videoname[7 + vsepage * 12].Substring(videoname[7 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsentaku8.text = "NONE"; }
+                if (videonum > 6 + vsepage * 12) { vsentaku7.text = videoname[6 + vsepage * 12].Substring(videoname[6 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsentaku7.text = "NONE"; }
+                if (videonum > 5 + vsepage * 12) { vsentaku6.text = videoname[5 + vsepage * 12].Substring(videoname[5 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsentaku6.text = "NONE"; }
+                if (videonum > 4 + vsepage * 12) { vsentaku5.text = videoname[4 + vsepage * 12].Substring(videoname[4 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsentaku5.text = "NONE"; }
+                if (videonum > 3 + vsepage * 12) { vsentaku4.text = videoname[3 + vsepage * 12].Substring(videoname[3 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsentaku4.text = "NONE"; }
+                if (videonum > 2 + vsepage * 12) { vsentaku3.text = videoname[2 + vsepage * 12].Substring(videoname[2 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsentaku3.text = "NONE"; }
+                if (videonum > 1 + vsepage * 12) { vsentaku2.text = videoname[1 + vsepage * 12].Substring(videoname[1 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsentaku2.text = "NONE"; }
+                if (videonum > 0 + vsepage * 12) { vsentaku1.text = videoname[0 + vsepage * 12].Substring(videoname[0 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsentaku1.text = "NONE"; }
+                if (videonum > 11 + vsepage * 12) { vsedntaku12.text = videoname[11 + vsepage * 12].Substring(videoname[11 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsedntaku12.text = "NONE"; }
+                if (videonum > 10 + vsepage * 12) { vsedntaku11.text = videoname[10 + vsepage * 12].Substring(videoname[10 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsedntaku11.text = "NONE"; }
+                if (videonum > 9 + vsepage * 12) { vsedntaku10.text = videoname[9 + vsepage * 12].Substring(videoname[9 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsedntaku10.text = "NONE"; }
+                if (videonum > 8 + vsepage * 12) { vsedntaku9.text = videoname[8 + vsepage * 12].Substring(videoname[8 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsedntaku9.text = "NONE"; }
+                if (videonum > 7 + vsepage * 12) { vsedntaku8.text = videoname[7 + vsepage * 12].Substring(videoname[7 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsedntaku8.text = "NONE"; }
+                if (videonum > 6 + vsepage * 12) { vsedntaku7.text = videoname[6 + vsepage * 12].Substring(videoname[6 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsedntaku7.text = "NONE"; }
+                if (videonum > 5 + vsepage * 12) { vsedntaku6.text = videoname[5 + vsepage * 12].Substring(videoname[5 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsedntaku6.text = "NONE"; }
+                if (videonum > 4 + vsepage * 12) { vsedntaku5.text = videoname[4 + vsepage * 12].Substring(videoname[4 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsedntaku5.text = "NONE"; }
+                if (videonum > 3 + vsepage * 12) { vsedntaku4.text = videoname[3 + vsepage * 12].Substring(videoname[3 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsedntaku4.text = "NONE"; }
+                if (videonum > 2 + vsepage * 12) { vsedntaku3.text = videoname[2 + vsepage * 12].Substring(videoname[2 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsedntaku3.text = "NONE"; }
+                if (videonum > 1 + vsepage * 12) { vsedntaku2.text = videoname[1 + vsepage * 12].Substring(videoname[1 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsedntaku2.text = "NONE"; }
+                if (videonum > 0 + vsepage * 12) { vsedntaku1.text = videoname[0 + vsepage * 12].Substring(videoname[0 + vsepage * 12].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { vsedntaku1.text = "NONE"; }
                 if (video_num == 0) { video_num = textt.videos; videos = new string[textt.videos]; }
                 videonum5.text = "No." + (video_num + 1 - 1);
                 videonum4.text = "No." + (video_num + 1 - 2);
@@ -2917,13 +2939,13 @@ public class edit : MonoBehaviour
                 ((Text)vtx3).text = string.Empty + script.videohantei[video_num - 3];
                 ((Text)vtx2).text = string.Empty + script.videohantei[video_num - 4];
                 ((Text)vtx1).text = string.Empty + script.videohantei[video_num - 5];
-                if (script.videonum[video_num - 1] != null & script.videonum[video_num - 1] != string.Empty) { videotx5.text = script.videonum[video_num - 1].Substring(script.videonum[video_num - 1].LastIndexOf("\\") + 1); } else { videotx5.text = "NONE"; }
-                if (script.videonum[video_num - 2] != null & script.videonum[video_num - 2] != string.Empty) { videotx4.text = script.videonum[video_num - 2].Substring(script.videonum[video_num - 2].LastIndexOf("\\") + 1); } else { videotx4.text = "NONE"; }
-                if (script.videonum[video_num - 3] != null & script.videonum[video_num - 3] != string.Empty) { videotx3.text = script.videonum[video_num - 3].Substring(script.videonum[video_num - 3].LastIndexOf("\\") + 1); } else { videotx3.text = "NONE"; }
-                if (script.videonum[video_num - 4] != null & script.videonum[video_num - 4] != string.Empty) { videotx2.text = script.videonum[video_num - 4].Substring(script.videonum[video_num - 4].LastIndexOf("\\") + 1); } else { videotx2.text = "NONE"; }
-                if (script.videonum[video_num - 5] != null & script.videonum[video_num - 5] != string.Empty) { videotx1.text = script.videonum[video_num - 5].Substring(script.videonum[video_num - 5].LastIndexOf("\\") + 1); } else { videotx1.text = "NONE"; }
+                if (script.videonum[video_num - 1] != null & script.videonum[video_num - 1] != string.Empty) { videotx5.text = script.videonum[video_num - 1].Substring(script.videonum[video_num - 1].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { videotx5.text = "NONE"; }
+                if (script.videonum[video_num - 2] != null & script.videonum[video_num - 2] != string.Empty) { videotx4.text = script.videonum[video_num - 2].Substring(script.videonum[video_num - 2].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { videotx4.text = "NONE"; }
+                if (script.videonum[video_num - 3] != null & script.videonum[video_num - 3] != string.Empty) { videotx3.text = script.videonum[video_num - 3].Substring(script.videonum[video_num - 3].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { videotx3.text = "NONE"; }
+                if (script.videonum[video_num - 4] != null & script.videonum[video_num - 4] != string.Empty) { videotx2.text = script.videonum[video_num - 4].Substring(script.videonum[video_num - 4].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { videotx2.text = "NONE"; }
+                if (script.videonum[video_num - 5] != null & script.videonum[video_num - 5] != string.Empty) { videotx1.text = script.videonum[video_num - 5].Substring(script.videonum[video_num - 5].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { videotx1.text = "NONE"; }
                 if (videoph >= 1) { videoplay.sprite = Resources.Load<Sprite>("UI/stop"); } else { videoplay.sprite = Resources.Load<Sprite>("UI/go"); }
-                if (videoph == 0) { videonpanel.SetActive(true); if (audioco.videoonf > 0) { videoont.text = "選択中のビデオ:" + videoname[audioco.videoonf - 1].Substring(videoname[audioco.videoonf - 1].LastIndexOf("\\") + 1); } else { videoont.text = "未選択"; } } else { videonpanel.SetActive(false); }
+                if (videoph == 0) { videonpanel.SetActive(true); if (audioco.videoonf > 0) { videoont.text = "選択中のビデオ:" + videoname[audioco.videoonf - 1].Substring(videoname[audioco.videoonf - 1].LastIndexOf("\\") + 1).Replace(".mp4", string.Empty); } else { videoont.text = "未選択"; } } else { videonpanel.SetActive(false); }
                 if (audioco.videoonf > 0 & videopf > 0)
                 {
                     if (videoname[audioco.videoonf - 1] != null & videoname[audioco.videoonf - 1] != string.Empty)

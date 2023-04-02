@@ -178,12 +178,15 @@ public class chrcontroller : MonoBehaviour
             chr5x = 0;
             chr6x = 0;
             chrcf = 0;
+            unazx = 0;
             unaz1x = 0;
             unaz2x = 0;
             unaz3x = 0;
+            odorokix = 0;
             odoroki1x = 0;
             odoroki2x = 0;
             odoroki3x = 0;
+            darux = 0;
             daru1x = 0;
             daru2x = 0;
             daru3x = 0;
@@ -241,7 +244,7 @@ public class chrcontroller : MonoBehaviour
         fadetime = Bgcontroller.fadetime;
         fadeoiflag = Bgcontroller.fadeoiflag;
         loadflag = Load.loadflag;
-        if (loadflag >= 2 & loadflag < 3)
+        if (loadflag ==2)
         {
             px = 0;
             okiagaripx = 0;
@@ -252,20 +255,12 @@ public class chrcontroller : MonoBehaviour
             darupmx = 0;
             unazpmx = 0;
             okiagari1x = 0;
-
             okiagari2x = 0;
-
             okiagari3x = 0;
-
             okiagarix = 0;
-
-
             daru1x = 0;
             daru2x = 0;
-
             daru3x = 0;
-
-
             unaz1x = 0;
             unaz2x = 0;
             unaz3x = 0;
@@ -275,53 +270,25 @@ public class chrcontroller : MonoBehaviour
             darupx = 0;
             unazpx = 0;
             odorokipx = 0;
-
-
-
             chrcx = 0;
-
-
-
             chr1x = 0;
-
             chr2x = 0;
-
             chr3x = 0;
-
             chrcf = 0;
-
-
-
             unazx = 0;
-
-
-
             odorokix = 0;
-
-
-
             darux = 0;
-
-
-
             arrivex = 0;
-
-
             arrivesx = 0;
-
             chrpx = 0;
             px = 0;
             kf = 0;
-
             chr1body.SetActive(true);
-
             chr2body.SetActive(true);
             chr3body.SetActive(true);
             chr1c.SetActive(true);
-
             chr2c.SetActive(true);
             chr3c.SetActive(true);
-
         }
 
         if (loadflag == 3 & anmak.loadtime >= 60)
@@ -331,9 +298,13 @@ public class chrcontroller : MonoBehaviour
             if (px == 0)
             {
                 kf = 0;
-                if (text_num <= chracfhantei)
+                if (chracfhantei==-1)
                 {
-                    
+                    if (textti.chrcs > 1)
+                    {
+                        if (text_num < script.chrchantei[1]) { chr1body_num = (script3.chrs[script.chrcnum[0]]); }
+                    }
+                    chrpx = 1;
                 }
 
                 if (text_num>= chrchantei)
@@ -602,6 +573,30 @@ public class chrcontroller : MonoBehaviour
                 if (px == 0)
                 {
                     px = 5;
+                }
+                if (textti.unazs > 0)
+                {
+                    if (text_num == 0 & script.unazhantei[0] == -1)
+                    {
+                        unazx = 0;
+                        unaz1x = 0;
+                    }
+                }
+                if (textti.odorokis > 0)
+                {
+                    if (text_num == 0 & script.odorokihantei[0] == -1)
+                    {
+                        odorokix = 0;
+                        odoroki1x = 0;
+                    }
+                }
+                if (textti.darus > 0)
+                {
+                    if (text_num == 0 & script.daruhantei[0] == -1)
+                    {
+                        darux = 0;
+                        daru1x = 0;
+                    }
                 }
             }
 
@@ -1293,8 +1288,13 @@ public class chrcontroller : MonoBehaviour
             }
             if (chrcf >= 1 & chrcf < 4 & chrcgage > 1)
             {
-
-
+                chrcgage = 1;
+                Image bgcia = chr1c.GetComponent<Image>();
+                bgcia.GetComponent<Image>().color = new Color(255, 255, 255, chrcgage);
+                Image bgcib = chr2c.GetComponent<Image>();
+                bgcib.GetComponent<Image>().color = new Color(255, 255, 255, chrcgage);
+                Image bgcic = chr3c.GetComponent<Image>();
+                bgcic.GetComponent<Image>().color = new Color(255, 255, 255, chrcgage);
 
                 if (chrcf == 1)
                 {
@@ -1446,7 +1446,7 @@ public class chrcontroller : MonoBehaviour
                     Image bgcuc3 = chr3c.GetComponent<Image>();
                     bgcuc3.GetComponent<Image>().transform.Translate(0, -unazmx, 0);
                 }
-                unazgage += 1;
+                unazgage += 2;
 
             }
             if (unazf == 1 & unazgage >= unazfx)
@@ -1471,7 +1471,7 @@ public class chrcontroller : MonoBehaviour
                     Image bgcuc = chr1c.GetComponent<Image>();
                     bgcuc.GetComponent<Image>().transform.Translate(0, unazmx, 0);
                 }
-                unazgage += 1;
+                unazgage += 2;
 
                 if (unazchr > 1 & unazchr <= 2)
                 {
@@ -1734,7 +1734,7 @@ public class chrcontroller : MonoBehaviour
                 Image bgcuc3 = chr3c.GetComponent<Image>();
                 bgcuc3.GetComponent<Image>().transform.Translate(-darumx, 0, 0);
             }
-            darugage += 1;
+            darugage += 2;
 
         }
         if (daruf == 1 & darugage >= darufx)
@@ -1770,7 +1770,7 @@ public class chrcontroller : MonoBehaviour
                 Image bgcuc3 = chr3c.GetComponent<Image>();
                 bgcuc3.GetComponent<Image>().transform.Translate(darumx, 0, 0);
             }
-            darugage += 1;
+            darugage += 2;
 
         }
         if (daruf == 2 & darugage >= darufx * 3)
@@ -1803,7 +1803,7 @@ public class chrcontroller : MonoBehaviour
                 Image bgcuc3 = chr3c.GetComponent<Image>();
                 bgcuc3.GetComponent<Image>().transform.Translate(-darumx, 0, 0);
             }
-            darugage += 1;
+            darugage += 2;
 
 
         }

@@ -205,9 +205,9 @@ public class textt : MonoBehaviour
     public string[] ceventsy;
     public string[] ceeventsy;
     public string[] beventsy = { "背景変化", "背景変化(複数)", "暗転", "アイキャッチ", "拡大" ,"","小パネル表示","大パネル表示","グラデーション効果","テキストボックス消去","テキスト中央表示"};
-    public string[] chapsy = { "1", "2", "3" };
+    public string[] chapsy = { "1", "2", "3","未定" };
     public string[] chapansy = { "なし", "あり" };
-    public string[] kakudaisy = { "1", "2", "3" };
+    public string[] kakudaisy = { "1", "2", "3","未定" };
     //音源
     public int[] bgmhantei;
     public int[] bgmehantei;

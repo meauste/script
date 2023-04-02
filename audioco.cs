@@ -54,6 +54,7 @@ public class audioco : MonoBehaviour
                 audiocf = 0;
                 audiosef = 0;
                 audiosebf = 0;
+                edit.asepage = 0;
                 break;
             case "bgme":
                 edit.audiof = 1;
@@ -62,6 +63,7 @@ public class audioco : MonoBehaviour
                 audiocf = 0;
                 audiosef = 0;
                 audiosebf = 0;
+                edit.asepage = 0;
                 break;
             case "bgmef":
                 edit.audiof = 2;
@@ -70,6 +72,7 @@ public class audioco : MonoBehaviour
                 audiocf = 0;
                 audiosef = 0;
                 audiosebf = 0;
+                edit.asepage = 0;
                 break;
             case "audioplay12":
                 if (edit.audioph != 12 + edit.asepage * 12)

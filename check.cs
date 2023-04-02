@@ -29,10 +29,18 @@ public class check : MonoBehaviour
     public int sentakuchf;
     public int sentakucof;
     public int text_num;
+    public int chrcx;
     public int[] chart;
     public int[] charts;
     public int[] charth;
     public int[] chartx;
+    public int kakudaix;
+    public int bgchanteit;
+    public int bgcdhanteit;
+    public int chaphanteit;
+    public int chapthanteit;
+    public int kakudaihanteit;
+    public int hazimarihanteit;
     textti script;
     // Start is called before the first frame update
     void Start()
@@ -48,10 +56,13 @@ public class check : MonoBehaviour
         tf = saveloadl.loadfl;
         sentakuchf = textti.six;
         sentakucof = textti.chapts;
-        edc1pl = textt.sentakus;
-        edc2pl = Bgcontroller.sentakux;
-        edc3pl = Bgcontroller.chaphanteit;
-        edc4pl = Bgcontroller.kakudaihanteit;
+        bgchanteit = textt.sentakus;
+        kakudaix = Bgcontroller.kakudaix;
+        bgcdhanteit = Bgcontroller.sentakux;
+        chaphanteit = Bgcontroller.chaphanteit;
+        chapthanteit = Bgcontroller.chapthanteit;
+        kakudaihanteit = Bgcontroller.kakudaihanteit;
+        hazimarihanteit = Bgcontroller.hazimarihanteit;
         edcpl = Bgcontroller.hazimarihanteit;
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
@@ -60,6 +71,7 @@ public class check : MonoBehaviour
             charts = script.charts;
             charth = script.charth;
             chartx = script.chartx;
+            chrcx = chrcontroller.chrcx;
         }
     }
 }

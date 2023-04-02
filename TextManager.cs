@@ -109,12 +109,12 @@ public class TextManager : MonoBehaviour
             text_num = 0;
         }
         Text chr_text = chrtext.GetComponent<Text>();
-        Font txfont = Resources.Load<Font>("Font/" + fonx[textti.fox]);
-        TMP_FontAsset txfontp = Resources.Load<TMP_FontAsset>("Font/" + fonx[textti.fox]);
-        Material txfontm = Resources.Load<Material>("Font/" + fonx[textti.fox]+" Atlas Material");
-        chr_text.font = txfont;
-        text_object.font = txfontp;
-        text_object.material = txfontm;
+        //Font txfont = Resources.Load<Font>("Font/" + fonx[textti.fox]);
+        //TMP_FontAsset txfontp = Resources.Load<TMP_FontAsset>("Font/" + fonx[textti.fox]);
+        //Material txfontm = Resources.Load<Material>("Font/" + fonx[textti.fox]+" Atlas Material");
+        //chr_text.font = txfont;
+        //text_object.font = txfontp;
+        //text_object.material = txfontm;
         chr_text.fontSize = 35;
         tnumhantei=1;
         tnumfa = 0;
@@ -141,13 +141,13 @@ public class TextManager : MonoBehaviour
     void Update()
     {
         Text chr_text = chrtext.GetComponent<Text>();
-        Font txfont = Resources.Load<Font>("Font/" + fonx[textti.fox]);
-        TMP_FontAsset  txfontp = Resources.Load<TMP_FontAsset >("Font/" + fonx[textti.fox]);
-        Material txfontm = Resources.Load<Material>("Font/" + fonx[textti.fox] + " Atlas Material");
+        //Font txfont = Resources.Load<Font>("Font/" + fonx[textti.fox]);
+        //TMP_FontAsset  txfontp = Resources.Load<TMP_FontAsset >("Font/" + fonx[textti.fox]);
+        //Material txfontm = Resources.Load<Material>("Font/" + fonx[textti.fox] + " Atlas Material");
         text_object.fontSize = textti.fsi;
-        chr_text.font = txfont;
-        text_object.font = txfontp;
-        text_object.material = txfontm;
+        //chr_text.font = txfont;
+        //text_object.font = txfontp;
+        //text_object.material = txfontm;
         hazimarif = Bgcontroller.hazimarif;
         hazimaritt = Bgcontroller.hazimaritt;
         hazimaritm = Bgcontroller.hazimaritm;
@@ -427,7 +427,7 @@ public class TextManager : MonoBehaviour
         }
         
         autow = auto / automax;
-        if ((Input.GetKeyDown(KeyCode.Space))|(autow>=1))
+        if (chrcontroller.unazf == 0 & chrcontroller.odorokif == 0 & chrcontroller.daruf == 0&(Input.GetKeyDown(KeyCode.Space))|(autow>=1))
         {
             canif = 1;
 
@@ -624,7 +624,7 @@ public class TextManager : MonoBehaviour
 
             text_object.text = textho;
         }
-        if (hazimaritt==0&autoflag == 1&tnumhantei==0)
+        if (chrcontroller.unazf == 0 & chrcontroller.odorokif == 0 & chrcontroller.daruf == 0&hazimaritt ==0&autoflag == 1&tnumhantei==0)
         {
             autogage.SetActive(true);
             auto += textti.autott;
@@ -644,24 +644,26 @@ public class TextManager : MonoBehaviour
     public void Onclick()
     {
         canif = 1;
+        if (chrcontroller.unazf == 0& chrcontroller.odorokif == 0& chrcontroller.daruf == 0)
+        {
+            if (hazimarif < 1 & tnumhantei == 0 & next_object == true)
+            {
 
-        if (hazimarif < 1&tnumhantei==0&next_object==true)
-        {
-            
                 text_num += 1;
-        }
-       else
-        {
-            text_object.text = textho;
-            tnumf = tnum+1;
-        }
-        auto = 0;
-        tnumhantei = 1;
-        if (hazimarif>=1&hazimaritt<=0)
-        {
-            
-            Bgcontroller.hazimaritt = 1;
-            Bgcontroller.hazimaritm = 1;
+            }
+            else
+            {
+                text_object.text = textho;
+                tnumf = tnum + 1;
+            }
+            auto = 0;
+            tnumhantei = 1;
+            if (hazimarif >= 1 & hazimaritt <= 0)
+            {
+
+                Bgcontroller.hazimaritt = 1;
+                Bgcontroller.hazimaritm = 1;
+            }
         }
     }
 

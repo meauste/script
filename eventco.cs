@@ -599,34 +599,34 @@ public class eventco : MonoBehaviour
                 if (script.chapans[edit.chap_num - 5] == 0) { script.chapans[edit.chap_num - 5] = 1; script.chapnum[edit.chap_num - 5] = ""; } else { script.chapans[edit.chap_num - 5] = 0; }
                 break;
             case "ctype5":
-                if (script.chaptypes[edit.chap_num - 1] < script.chapsy.Length - 1) { script.chaptypes[edit.chap_num - 1] += 1; } else { script.chaptypes[edit.chap_num - 1] = 0; };
+                if (script.chaptypes[edit.chap_num - 1] < script.chapsy.Length - 2) { script.chaptypes[edit.chap_num - 1] += 1; } else { script.chaptypes[edit.chap_num - 1] = 0; };
                 break;
             case "ctype4":
-                if (script.chaptypes[edit.chap_num - 2] < script.chapsy.Length - 1) { script.chaptypes[edit.chap_num - 2] += 1; } else { script.chaptypes[edit.chap_num - 2] = 0; };
+                if (script.chaptypes[edit.chap_num - 2] < script.chapsy.Length - 2) { script.chaptypes[edit.chap_num - 2] += 1; } else { script.chaptypes[edit.chap_num - 2] = 0; };
                 break;
             case "ctype3":
-                if (script.chaptypes[edit.chap_num - 3] < script.chapsy.Length - 1) { script.chaptypes[edit.chap_num - 3] += 1; } else { script.chaptypes[edit.chap_num - 3] = 0; };
+                if (script.chaptypes[edit.chap_num - 3] < script.chapsy.Length - 2) { script.chaptypes[edit.chap_num - 3] += 1; } else { script.chaptypes[edit.chap_num - 3] = 0; };
                 break;
             case "ctype2":
-                if (script.chaptypes[edit.chap_num - 4] < script.chapsy.Length - 1) { script.chaptypes[edit.chap_num - 4] += 1; } else { script.chaptypes[edit.chap_num - 4] = 0; };
+                if (script.chaptypes[edit.chap_num - 4] < script.chapsy.Length - 2) { script.chaptypes[edit.chap_num - 4] += 1; } else { script.chaptypes[edit.chap_num - 4] = 0; };
                 break;
             case "ctype1":
-                if (script.chaptypes[edit.chap_num - 5] < script.chapsy.Length - 1) { script.chaptypes[edit.chap_num - 5] += 1; } else { script.chaptypes[edit.chap_num - 5] = 0; }
+                if (script.chaptypes[edit.chap_num - 5] < script.chapsy.Length - 2) { script.chaptypes[edit.chap_num - 5] += 1; } else { script.chaptypes[edit.chap_num - 5] = 0; }
                 break;
             case "ktype5":
-                if (script.kakudaitypes[edit.kakudai_num - 1] < script.kakudaisy.Length - 1) { script.kakudaitypes[edit.kakudai_num - 1] += 1; } else { script.kakudaitypes[edit.kakudai_num - 1] = 0; };
+                if (script.kakudaitypes[edit.kakudai_num - 1] < script.kakudaisy.Length - 2) { script.kakudaitypes[edit.kakudai_num - 1] += 1; } else { script.kakudaitypes[edit.kakudai_num - 1] = 0; };
                 break;
             case "ktype4":
-                if (script.kakudaitypes[edit.kakudai_num - 2] < script.kakudaisy.Length - 1) { script.kakudaitypes[edit.kakudai_num - 2] += 1; } else { script.kakudaitypes[edit.kakudai_num - 2] = 0; };
+                if (script.kakudaitypes[edit.kakudai_num - 2] < script.kakudaisy.Length - 2) { script.kakudaitypes[edit.kakudai_num - 2] += 1; } else { script.kakudaitypes[edit.kakudai_num - 2] = 0; };
                 break;
             case "ktype3":
-                if (script.kakudaitypes[edit.kakudai_num - 3] < script.kakudaisy.Length - 1) { script.kakudaitypes[edit.kakudai_num - 3] += 1; } else { script.kakudaitypes[edit.kakudai_num - 3] = 0; };
+                if (script.kakudaitypes[edit.kakudai_num - 3] < script.kakudaisy.Length - 2) { script.kakudaitypes[edit.kakudai_num - 3] += 1; } else { script.kakudaitypes[edit.kakudai_num - 3] = 0; };
                 break;
             case "ktype2":
-                if (script.kakudaitypes[edit.kakudai_num - 4] < script.kakudaisy.Length - 1) { script.kakudaitypes[edit.kakudai_num - 4] += 1; } else { script.kakudaitypes[edit.kakudai_num - 4] = 0; };
+                if (script.kakudaitypes[edit.kakudai_num - 4] < script.kakudaisy.Length - 2) { script.kakudaitypes[edit.kakudai_num - 4] += 1; } else { script.kakudaitypes[edit.kakudai_num - 4] = 0; };
                 break;
             case "ktype1":
-                if (script.kakudaitypes[edit.kakudai_num - 5] < script.kakudaisy.Length - 1) { script.kakudaitypes[edit.kakudai_num - 5] += 1; } else { script.kakudaitypes[edit.kakudai_num - 5] = 0; }
+                if (script.kakudaitypes[edit.kakudai_num - 5] < script.kakudaisy.Length - 2) { script.kakudaitypes[edit.kakudai_num - 5] += 1; } else { script.kakudaitypes[edit.kakudai_num - 5] = 0; }
                 break;
             default:
                 break;

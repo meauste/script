@@ -1264,7 +1264,7 @@ public class Bgcontroller : MonoBehaviour
 
 
         }
-
+        if (kakudaix < textti.kakudais) { kakudaihantei = script.kakudaihantei[kakudaix]; } else { kakudaihantei = 99999; }
         if (loadflag <= 0 & text_num >= kakudaihantei)
         {
 
